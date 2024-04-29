@@ -165,5 +165,10 @@ public class FrogManager : MonoBehaviour
         this.lives = lives;
         livesText.text = lives.ToString();
     }
+        private void edit_SetLives(int lives)
+    {
+        this.lives = lives;
+        livesText.text = lives.ToString();
+    }
 
 }
