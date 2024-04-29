@@ -59,6 +59,11 @@ public class BirdManager : MonoBehaviour
         Time.timeScale = 0f;
         player.enabled = false;
     }
+        public void edit_Pause()
+    {
+        Time.timeScale = 0f;
+        player.enabled = false;
+    }
 
     public void IncreaseScore()
     {
