@@ -43,8 +43,7 @@ public class Player : MonoBehaviour
 
     private void OnEnable()
     {
-        // Turn off collisions for a few seconds after spawning to ensure the
-        // player has enough time to safely move away from asteroids
+        // Turn o
         TurnOffCollisions();
         Invoke(nameof(TurnOnCollisions), respawnInvulnerability);
     }
@@ -82,6 +81,22 @@ public class Player : MonoBehaviour
     }
 
     private void ScreenWrap()
+    {
+        // Move to the opposite side of the screen if the player exceeds the bounds
+        if (rb.position.x > screenBounds.max.x + 0.5f) {
+            rb.position = new Vector2(screenBounds.min.x - 0.5f, rb.position.y);
+        }
+        else if (rb.position.x < screenBounds.min.x - 0.5f) {
+            rb.position = new Vector2(screenBounds.max.x + 0.5f, rb.position.y);
+        }
+        else if (rb.position.y > screenBounds.max.y + 0.5f) {
+            rb.position = new Vector2(rb.position.x, screenBounds.min.y - 0.5f);
+        }
+        else if (rb.position.y < screenBounds.min.y - 0.5f) {
+            rb.position = new Vector2(rb.position.x, screenBounds.max.y + 0.5f);
+        }
+    }
+        private void edit_ScreenWrap()
     {
         // Move to the opposite side of the screen if the player exceeds the bounds
         if (rb.position.x > screenBounds.max.x + 0.5f) {
