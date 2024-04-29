@@ -28,12 +28,11 @@ public class Asteroid : MonoBehaviour
         spriteRenderer.sprite = sprites[Random.Range(0, sprites.Length)];
         transform.eulerAngles = new Vector3(0f, 0f, Random.value * 360f);
 
-        // Set the scale and mass of the asteroid based on the assigned size so
-        // the physics is more realistic
+    
         transform.localScale = Vector3.one * size;
         rb.mass = size;
 
-        // Destroy the asteroid after it reaches its max lifetime
+        
         Destroy(gameObject, maxLifetime);
     }
 
@@ -45,6 +44,25 @@ public class Asteroid : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Bullet"))
+        {
+            // Check if the asteroid is large enough to split in half
+            // (both parts must be greater than the minimum size)
+            if ((size * 0.5f) >= minSize)
+            {
+                CreateSplit();
+                CreateSplit();
+            }
+
+            AsManager.Instance.OnAsteroidDestroyed(this);
+
+            // Destroy the current asteroid since it is either replaced by two
+            // new asteroids or small enough to be destroyed by the bullet
+            Destroy(gameObject);
+        }
+    }
+        public void edit_OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
