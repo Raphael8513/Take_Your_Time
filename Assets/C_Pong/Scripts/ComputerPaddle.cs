@@ -8,6 +8,27 @@ public class ComputerPaddle : Paddle
     private void FixedUpdate()
     {
         // Check if the ball is moving towards the paddle (positive x velocity)
+        if (ball.velocity.x > 0f)
+        {
+            // Move the paddle in the direction of the ball to track it
+            if (ball.position.y > rb.position.y) {
+                rb.AddForce(Vector2.up * speed);
+            } else if (ball.position.y < rb.position.y) {
+                rb.AddForce(Vector2.down * speed);
+            }
+        }
+        else
+        {
+            if (rb.position.y > 0f) {
+                rb.AddForce(Vector2.down * speed);
+            } else if (rb.position.y < 0f) {
+                rb.AddForce(Vector2.up * speed);
+            }
+        }
+    }
+        private void edit_FixedUpdate()
+    {
+        // Check if the ball is moving towards the paddle (positive x velocity)
         // or away from the paddle (negative x velocity)
         if (ball.velocity.x > 0f)
         {
