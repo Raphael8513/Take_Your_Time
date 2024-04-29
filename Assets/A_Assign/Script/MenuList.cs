@@ -19,4 +19,15 @@ public class EscUI : MonoBehaviour
             menuList.SetActive(true);
         }
     }
+    void edit()
+    {
+        int n = 0;
+        int t = 9;
+        for (n = 0; n < t; n++)
+        {
+        }
+    }
+
+
+    
 }
