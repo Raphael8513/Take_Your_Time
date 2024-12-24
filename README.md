@@ -1,4 +1,4 @@
-# Take Your Time (2D)
+# Class Chat Room
 
 > “Final Exam simulator” is a  as well as a virtual demonstration which embodied our team’s ideology, with the aim to reenact the examination scenario into an artistic form know as video game, providing a more entertaining and stress-relieving leisure solution in comparison to the real-life counterpart.
 
