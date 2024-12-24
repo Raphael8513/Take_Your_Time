@@ -1,7 +1,6 @@
 # Class Chat Room
 
-> “Final Exam simulator” is a  as well as a virtual demonstration which embodied our team’s ideology, with the aim to reenact the examination scenario into an artistic form know as video game, providing a more entertaining and stress-relieving leisure solution in comparison to the real-life counterpart.
+> Class Chat Room is a software designed to help students easily discuss questions and share materials during lectures. The main features include: Private and Public Chats: Users can send messages in both private and public chat rooms.File and Text Sharing: It supports sending both files and text messages.Local Network Connection: The software connects to the classroom’s local network, eliminating the need for an external internet connection.Real-time Communication: Real-time messaging is enabled via WebSocket technology, ensuring fast and seamless interaction. Frontend and Backend Separation: The frontend is developed using Vue.js, and the backend is powered by Spring Boot, ensuring efficiency and scalability.
 
-- **Topics**: Multi-directional Shooting, Random Generation, Physics
-- **Version**: Unity 2019.4 (LTS)
-- [**developer**](JIA_MU)
+- **Topics**: Vue.js, spring boot, websocket
+- [**developer**](JIA_MU)(LIU YIQING)
